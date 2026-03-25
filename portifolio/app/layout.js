@@ -12,8 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Lucas Fernandes",
-  description: "Meu portfólio",
+  title: "Portfólio-Projeto-WM",
 };
 
 export default function RootLayout({ children }) {

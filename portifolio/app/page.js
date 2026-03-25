@@ -63,14 +63,17 @@ export default function Home() {
         </button>
       </header>
 
-      <section id="home" className="flex gap-20 justify-center flex-col mt-10">
+      <section
+        id="home"
+        className="flex gap-20 justify-start flex-col min-h-screen mt-45"
+      >
         {/*texto animado (talvez animado XD)*/}
         <div className="animated-txt">
           <h2 className="txt">Welcome!_</h2>
         </div>
 
         {/*descricao + foto redonda com expand*/}
-        <div className="flex  justify-evenly items-center gap-20 mt-10">
+        <div className="flex  justify-evenly items-center gap-20">
           <div className="common">
             <p className="about-text">
               Formado pelo Colégio Madre de Deus e atualmente estudante de{" "}
@@ -92,7 +95,8 @@ export default function Home() {
                 C, C++, Java, JavaScript, HTML5, CSS3 e Python
               </strong>
               , e estou constantemente buscando evoluir, adquirindo novos
-              conhecimentos e certificações que fortaleçam meu repertório.
+              conhecimentos e certificações que fortaleçam meu repertório.{" "}
+              <strong className="text-[#e83151]">:)</strong>
             </p>
             <div className="about-me-socials">
               <a href="https://github.com/Bye-bit">
@@ -144,15 +148,103 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="Projects"
-        className="flex gap-20 justify-center flex-col mt-10"
-      >
-        <div className="animated-txt">
-          <h3 className="title">Projects</h3>
-          <a></a>
+      <section id="Projects" className="min-h-screen">
+        <div className="flex gap-[30px] justify-center flex-col items-center">
+          <div className="projects-title">Projects</div>
+          <p className="projects-text">
+            <strong className="text-[#e83151]">
+              Aqui estão alguns dos meus projetos: :)
+            </strong>
+          </p>
+
+          <div className="grid grid-cols-3 gap-15 mt-35">
+            {/* CARD */}
+            <div className="project-card">
+              <img
+                src="/projeto1.png"
+                alt="Projeto 1"
+                className="project-img"
+              />
+
+              <h4 className="project-title">StonksViewer</h4>
+
+              <p className="project-desc">
+                Sistema em feito em Python utilizando o framework Django
+              </p>
+
+              <a
+                href="https://github.com/LucasMN0/stonks-viewer"
+                target="_blank"
+                className="project-btn"
+              >
+                Ver no GitHub
+              </a>
+            </div>
+
+            <div className="project-card">
+              <img
+                src="/projeto2.png"
+                alt="Projeto 2"
+                className="project-img"
+              />
+
+              <h5 className="project-title">CardapIA</h5>
+
+              <p className="project-desc">
+                Sistema feito em Javascript utilizando a API do gemini para
+                gerar receitas saudaveis automaticamente
+              </p>
+
+              <a
+                href="https://github.com/LettyciaDev/PROJETO-WEB-MOBILE"
+                target="_blank"
+                className="project-btn"
+              >
+                Ver no GitHub
+              </a>
+            </div>
+            <div className="project-card">
+              <img
+                src="/projeto3.png"
+                alt="Projeto 3"
+                className="project-img"
+              />
+
+              <h6 className="project-title">App de musicas</h6>
+
+              <p className="project-desc">
+                Sistema em feito em java usando arquivos para armazenar as
+                musicas e playlists, com interface feita em javaFX
+              </p>
+
+              <a
+                href="https://github.com/joao0cb/Projeto-POO"
+                target="_blank"
+                className="project-btn"
+              >
+                Ver no GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+
+      <section id="Projects" className="min-h-screen">
+        <div className="flex gap-[30px] justify-center flex-col items-center">
+          <div className="projects-title">Jogo da Forca</div>
+          <p className="projects-text">
+            <strong className="text-[#e83151]">
+              Aqui esta o Jogo da forca :)
+            </strong>
+          </p>
+        </div>
+      </section>
+
+      <footer id="socials">
+        <div className="footer-container">
+          <p className="footer-text">oi diego de barros haha</p>
+        </div>
+      </footer>
     </main>
   );
 }
