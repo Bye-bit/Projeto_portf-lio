@@ -38,8 +38,12 @@ export default function Home() {
           <a className="button_header" href="#Projects">
             Projects
           </a>
-          <a className="button_header">Social</a>
-          <a className="button_header">Forca</a>
+          <a href="#socials" className="button_header">
+            Socials
+          </a>
+          <a href="#forca" className="button_header">
+            Forca
+          </a>
         </div>
         <button id="theme-switch" onClick={handleClick}>
           <svg
@@ -229,7 +233,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="Projects" className="min-h-screen">
+      <section id="forca" className="min-h-screen">
         <div className="flex gap-[30px] justify-center flex-col items-center">
           <div className="projects-title">Jogo da Forca</div>
           <p className="projects-text">
@@ -237,12 +241,143 @@ export default function Home() {
               Aqui esta o Jogo da forca :)
             </strong>
           </p>
+          <svg width="220" height="260" viewBox="0 0 220 260">
+            <line
+              x1="10"
+              y1="250"
+              x2="180"
+              y2="250"
+              stroke="#111"
+              strokeWidth="4"
+            />
+
+            <line
+              x1="50"
+              y1="250"
+              x2="50"
+              y2="20"
+              stroke="#111"
+              strokeWidth="4"
+            />
+
+            <line
+              x1="50"
+              y1="20"
+              x2="140"
+              y2="20"
+              stroke="#111"
+              strokeWidth="4"
+            />
+
+            <line
+              x1="140"
+              y1="20"
+              x2="140"
+              y2="50"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <circle
+              cx="140"
+              cy="70"
+              r="18"
+              stroke="#111"
+              strokeWidth="3"
+              fill="none"
+            />
+
+            <line
+              x1="140"
+              y1="88"
+              x2="140"
+              y2="150"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <line
+              x1="140"
+              y1="105"
+              x2="105"
+              y2="125"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <line
+              x1="140"
+              y1="105"
+              x2="175"
+              y2="125"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <line
+              x1="140"
+              y1="150"
+              x2="110"
+              y2="200"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <line
+              x1="140"
+              y1="150"
+              x2="170"
+              y2="200"
+              stroke="#111"
+              strokeWidth="3"
+            />
+
+            <circle
+              cx="140"
+              cy="50"
+              r="6"
+              stroke="#111"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+
+          <a href="/forca" className="project-btn">
+            <strong>Jogar agora!</strong>
+          </a>
         </div>
       </section>
 
       <footer id="socials">
         <div className="footer-container">
-          <p className="footer-text">oi diego de barros haha</p>
+          <p className="footer-text">Socials</p>
+
+          <div className="footer-right">
+            <div className="footer-item">
+              <strong>Email:</strong>
+              <span>lucasfernandes.sqn@gmail.com</span>
+            </div>
+
+            <div className="footer-item">
+              <strong>Numero:</strong>
+              <span>+55 981872602</span>
+            </div>
+
+            <div className="footer-item">
+              <strong>Instagram:</strong>
+              <span>@fer.lucas2</span>
+            </div>
+
+            <div className="footer-item">
+              <strong>Github:</strong>
+              <span>Bye-bit</span>
+            </div>
+
+            <div className="footer-item">
+              <strong>LinkedIn:</strong>
+              <span>@LucasFernandes</span>
+            </div>
+          </div>
         </div>
       </footer>
     </main>

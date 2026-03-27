@@ -1,0 +1,202 @@
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(#ff0033 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveParticles 20s linear infinite;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -200px);
+  }
+}
+
+.header {
+  width: 100%;
+  padding: 20px;
+  text-shadow: 0 0 0 15px rgba(255, 0, 50, 0.2);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 0 20px rgba(255, 0, 50, 0.2);
+}
+
+.header h1 {
+  font-size: 32px;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.header p {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.forca-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  color: var(--text-color);
+}
+
+.forca-svg {
+  margin: 20px auto;
+  display: block;
+}
+
+.dica-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dica-container p {
+  font-size: 22px;
+  color: var(--secondary-text);
+}
+
+.letra {
+  display: inline-block;
+  width: 35px;
+  height: 45px;
+  margin: 6px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 3px solid var(--accent-color);
+  color: var(--text-color);
+  vertical-align: bottom;
+  transition: 0.2s;
+}
+
+.letra:hover {
+  transform: translateY(-2px);
+}
+
+.espaco {
+  display: inline-block;
+  width: 25px;
+}
+
+.teclado {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.linha {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.teclado button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.teclado button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.teclado button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ff4d6d;
+}
+
+p {
+  text-align: center;
+}
+
+p:last-of-type {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.letra {
+  animation: pop 0.2s ease;
+}
+
+.back {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.erro {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.teclado button:active {
+  transform: scale(0.9);
+}

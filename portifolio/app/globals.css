@@ -38,6 +38,8 @@ html {
   top: 0px;
   gap: 100px;
   z-index: 5;
+  box-shadow: 0 0 20px rgba(255, 0, 50, 0.2);
+  border-bottom: 2px solid var(--accent-color);
   background-color: var(--base-variant);
 }
 
@@ -248,18 +250,29 @@ html {
 }
 
 .project-btn:hover {
-  background-color: #ff4d6d;
+  background-color: var(--accent-color);
   transform: scale(1.05);
 }
 
 .footer-container {
-  height: 125px;
-  background-color: var(--third-text);
-  width: 100%;
+  background-color: var(--accent-color);
+  padding: 40px 80px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 .footer-text {
-  color: var(--secondary-text);
+  font-size: 40px;
+  color: var(--text-color);
+  display: flex;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; /* 👈 ISSO resolve */
+  gap: 5px;
 }
 
 @keyframes typing {
@@ -310,4 +323,39 @@ html {
 
 #theme-switch svg:last-child {
   display: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
+  background-size: 35px 35px;
+
+  animation: particlesMove 20s linear infinite;
+
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes particlesMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-150px, -150px);
+  }
+}
+
+body {
+  position: relative;
+  z-index: 0;
+  background-color: var(--base-color);
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
