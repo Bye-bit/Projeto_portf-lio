@@ -271,7 +271,7 @@ html {
 
 .footer-right {
   display: flex;
-  flex-direction: column; /* 👈 ISSO resolve */
+  flex-direction: column;
   gap: 5px;
 }
 

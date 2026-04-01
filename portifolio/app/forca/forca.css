@@ -19,29 +19,6 @@ body::before {
   }
 }
 
-.header {
-  width: 100%;
-  padding: 20px;
-  text-shadow: 0 0 0 15px rgba(255, 0, 50, 0.2);
-  text-align: center;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--accent-color);
-  box-shadow: 0 0 20px rgba(255, 0, 50, 0.2);
-}
-
-.header h1 {
-  font-size: 32px;
-  color: var(--text-color);
-  margin-bottom: 5px;
-  letter-spacing: 2px;
-}
-
-.header p {
-  font-size: 14px;
-  color: var(--secondary-text);
-}
-
 .forca-container {
   display: flex;
   flex-direction: column;
@@ -162,7 +139,6 @@ p:last-of-type {
   padding: 10px 20px;
   border-radius: 10px;
 }
-
 
 @keyframes pop {
   0% {

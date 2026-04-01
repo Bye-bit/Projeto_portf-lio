@@ -104,152 +104,172 @@ export default function Forca() {
   }
 
   return (
-    <div className={`forca-container ${erros > 0 ? "erro" : ""}`}>
-      <header className="header">
-        <h1>Jogo da Forca</h1>
-        <Link href="/" className="back">
-          Voltar
-        </Link>
-      </header>
-      <svg width="200" height="250" className="forca-svg">
-        <line
-          x1="10"
-          y1="240"
-          x2="150"
-          y2="240"
-          stroke="black"
-          strokeWidth="4"
-        />
-        <line x1="40" y1="240" x2="40" y2="20" stroke="black" strokeWidth="4" />
-        <line x1="40" y1="20" x2="120" y2="20" stroke="black" strokeWidth="4" />
-        <line
-          x1="120"
-          y1="20"
-          x2="120"
-          y2="40"
-          stroke="black"
-          strokeWidth="4"
-        />
-
-        {erros >= 1 && (
-          <circle
-            cx="120"
-            cy="55"
-            r="15"
-            stroke="black"
-            strokeWidth="3"
-            fill="none"
-          />
-        )}
-
-        {erros >= 2 && (
-          <line
-            x1="120"
-            y1="70"
-            x2="120"
-            y2="130"
-            stroke="black"
-            strokeWidth="3"
-          />
-        )}
-
-        {erros >= 3 && (
-          <line
-            x1="120"
-            y1="90"
-            x2="90"
-            y2="110"
-            stroke="black"
-            strokeWidth="3"
-          />
-        )}
-
-        {erros >= 4 && (
-          <line
-            x1="120"
-            y1="90"
-            x2="150"
-            y2="110"
-            stroke="black"
-            strokeWidth="3"
-          />
-        )}
-
-        {erros >= 5 && (
-          <line
-            x1="120"
-            y1="130"
-            x2="95"
-            y2="170"
-            stroke="black"
-            strokeWidth="3"
-          />
-        )}
-
-        {erros >= 6 && (
-          <line
-            x1="120"
-            y1="130"
-            x2="145"
-            y2="170"
-            stroke="black"
-            strokeWidth="3"
-          />
-        )}
-      </svg>
-      {!palavraEscolhida && (
-        <button onClick={escolherPalavra}>Escolher Palavra</button>
-      )}
-      {palavraEscolhida && (
-        <div className="dica-container">
-          <p>Dica: {palavraEscolhida.dica}</p>
-
-          <p>
-            {palavraEscolhida.palavra.split("").map((letra, index) => {
-              if (letra == " ") {
-                return <span key={index} className="espaco"></span>;
-              }
-              if (perdeu || letrasUsadas.includes(letra)) {
-                return (
-                  <span key={index} className="letra">
-                    {letra}
-                  </span>
-                );
-              }
-              return <span key={index} className="letra"></span>;
-            })}
-          </p>
-
-          <div className="teclado">
-            {linhas.map((linha, i) => (
-              <div key={i} className="linha">
-                {linha.map((letra) => (
-                  <button
-                    key={letra}
-                    onClick={() => tentarLetra(letra)}
-                    disabled={letrasUsadas.includes(letra) || perdeu || venceu}
-                  >
-                    {letra}
-                  </button>
-                ))}
-              </div>
-            ))}
-          </div>
+    <>
+      <header className="header_container">
+        <div className="flex gap-[180px] items-center">
+          <h1 className="header_text">Jogo da forca</h1>
+          <Link className="button_header" href="/">
+            Home
+          </Link>
         </div>
-      )}
-      {perdeu && (
-        <p>
-          <strong>Você perdeu!</strong>
-        </p>
-      )}
-      {venceu && (
-        <p>
-          <strong>Você venceu!</strong>
-        </p>
-      )}
-      {(venceu || perdeu) && (
-        <button onClick={escolherPalavra}>Jogar Novamente</button>
-      )}
-    </div>
+      </header>
+      <div className={`forca-container ${erros > 0 ? "erro" : ""}`}>
+        <svg width="200" height="250" className="forca-svg">
+          <line
+            x1="10"
+            y1="240"
+            x2="150"
+            y2="240"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <line
+            x1="40"
+            y1="240"
+            x2="40"
+            y2="20"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <line
+            x1="40"
+            y1="20"
+            x2="120"
+            y2="20"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <line
+            x1="120"
+            y1="20"
+            x2="120"
+            y2="40"
+            stroke="black"
+            strokeWidth="4"
+          />
+
+          {erros >= 1 && (
+            <circle
+              cx="120"
+              cy="55"
+              r="15"
+              stroke="black"
+              strokeWidth="3"
+              fill="none"
+            />
+          )}
+
+          {erros >= 2 && (
+            <line
+              x1="120"
+              y1="70"
+              x2="120"
+              y2="130"
+              stroke="black"
+              strokeWidth="3"
+            />
+          )}
+
+          {erros >= 3 && (
+            <line
+              x1="120"
+              y1="90"
+              x2="90"
+              y2="110"
+              stroke="black"
+              strokeWidth="3"
+            />
+          )}
+
+          {erros >= 4 && (
+            <line
+              x1="120"
+              y1="90"
+              x2="150"
+              y2="110"
+              stroke="black"
+              strokeWidth="3"
+            />
+          )}
+
+          {erros >= 5 && (
+            <line
+              x1="120"
+              y1="130"
+              x2="95"
+              y2="170"
+              stroke="black"
+              strokeWidth="3"
+            />
+          )}
+
+          {erros >= 6 && (
+            <line
+              x1="120"
+              y1="130"
+              x2="145"
+              y2="170"
+              stroke="black"
+              strokeWidth="3"
+            />
+          )}
+        </svg>
+        {!palavraEscolhida && (
+          <button onClick={escolherPalavra}>Escolher Palavra</button>
+        )}
+        {palavraEscolhida && (
+          <div className="dica-container">
+            <p>Dica: {palavraEscolhida.dica}</p>
+
+            <p>
+              {palavraEscolhida.palavra.split("").map((letra, index) => {
+                if (letra == " ") {
+                  return <span key={index} className="espaco"></span>;
+                }
+                if (perdeu || letrasUsadas.includes(letra)) {
+                  return (
+                    <span key={index} className="letra">
+                      {letra}
+                    </span>
+                  );
+                }
+                return <span key={index} className="letra"></span>;
+              })}
+            </p>
+
+            <div className="teclado">
+              {linhas.map((linha, i) => (
+                <div key={i} className="linha">
+                  {linha.map((letra) => (
+                    <button
+                      key={letra}
+                      onClick={() => tentarLetra(letra)}
+                      disabled={
+                        letrasUsadas.includes(letra) || perdeu || venceu
+                      }
+                    >
+                      {letra}
+                    </button>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {perdeu && (
+          <p>
+            <strong>Você perdeu!</strong>
+          </p>
+        )}
+        {venceu && (
+          <p>
+            <strong>Você venceu!</strong>
+          </p>
+        )}
+        {(venceu || perdeu) && (
+          <button onClick={escolherPalavra}>Jogar Novamente</button>
+        )}
+      </div>
+    </>
   );
 }
