@@ -1,4 +1,4 @@
-# 🚀 Portfólio - Lucas Fernandes
+# Portfólio - Lucas Fernandes
 
 Este é o meu site de portfólio desenvolvido com **Next.js**, com o objetivo de apresentar meus projetos, informações pessoais e demonstrar minhas habilidades em desenvolvimento web.
 
